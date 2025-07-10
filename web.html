@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web Application</title>
+    <link rel="stylesheet" href="webcs.css" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">WebApp</div>
+        <div class="nav-links">
+            <a href="#" class="nav-link" data-target="home">Home</a>
+            <a href="#" class="nav-link" data-target="about">About</a>
+            <a href="#" class="nav-link" data-target="blog">Blog</a>
+            <a href="#" class="nav-link" data-target="contact">Contact</a>
+            <a href="#" class="nav-link" data-target="login">Login</a>
+        </div>
+        <button class="theme-toggle" id="themeToggle"> 🌓</button>
+        <div class="menu-toggle" id="menuToggle"></div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="active">
+            <div class="hero">
+                <h1 class="fade-in">Welcome to Our Interactive Web App</h1>
+                <p class="fade-in delay-1">Experience a seamless blend of design and functionality that brings your ideas to life.</p>
+                <button class="cta-button fade-in delay-2">Explore More</button>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2 class="section-title fade-in">About Us</h2>
+            <div class="about-content">
+                <div class="about-image fade-in">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fb8a2079-3e5c-462b-b504-b2101d9ae1c7.png" alt="Diverse team of professionals collaborating in a modern office with laptops and whiteboards" />
+                </div>
+                <div class="about-text fade-in delay-1">
+                    <h3>Our Story</h3>
+                    <p>Founded in 2023, we're dedicated to creating innovative web solutions that solve real-world problems with cutting-edge technology and elegant design.</p>
+                    <p>Our team consists of passionate developers, designers, and strategists working together to deliver exceptional digital experiences.</p>
+                    <button class="cta-button delay-2" style="align-self: flex-start;">Learn More</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog">
+            <h2 class="section-title fade-in">Latest Posts</h2>
+            <div class="blog-posts">
+                <div class="blog-card fade-in">
+                    <div class="blog-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b6f37ff3-840d-4b1a-afe7-2d4129cbb727.png" alt="Digital marketing concepts with social media icons and analytics dashboard on a desk" />
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Mastering Web Development in 2023</h3>
+                        <p class="blog-excerpt">Learn the essential skills and tools every modern web developer needs to stay competitive in today's market.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+                <div class="blog-card fade-in delay-1">
+                    <div class="blog-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fbc3cc42-af84-48bc-a46b-673272bfb89d.png" alt="Close-up of hands typing on a keyboard with code editor visible on screen" />
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">UI/UX Design Principles</h3>
+                        <p class="blog-excerpt">Explore the fundamental principles that will help you create intuitive and engaging user interfaces.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+                <div class="blog-card fade-in delay-2">
+                    <div class="blog-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fa00076a-eb6d-4da7-9474-b953739c2e36.png" alt="Colorful mobile apps displayed on modern smartphones arranged on a white table" />
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Future of Mobile Development</h3>
+                        <p class="blog-excerpt">Discover the emerging trends and technologies that are shaping the future of mobile application development.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2 class="section-title fade-in">Contact Us</h2>
+            <div class="form-container">
+                <form id="contactForm" class="form-card fade-in">
+                    <h3 class="form-title">Send Us a Message</h3>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                        <div class="error-message" id="nameError">Please enter your name</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" required>
+                        <div class="error-message" id="emailError">Please enter a valid email</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" class="form-control" rows="5" required></textarea>
+                        <div class="error-message" id="messageError">Please enter your message</div>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                    <div class="form-message" id="contactMessage"></div>
+                </form>
+                <div class="form-card fade-in delay-1">
+                    <h3 class="form-title">Our Location</h3>
+                    <div class="about-image" style="height: 300px; margin-bottom: 1.5rem;">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/081d2750-561f-4266-8854-82cad3064ef6.png" alt="Modern office building with glass facade in a business district with trees and people walking" />
+                    </div>
+                    <p><strong>Address:</strong> Coimbatore,India</p>
+                    <p><strong>Phone:</strong> +91 (099) 123-4566</p>
+                    <p><strong>Email:</strong> info@webapp.com</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Login Section -->
+        <section id="login">
+            <h2 class="section-title fade-in">Login</h2>
+            <div class="form-container">
+                <form id="loginForm" class="form-card fade-in">
+                    <h3 class="form-title">Welcome Back</h3>
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" class="form-control" required>
+                        <div class="error-message" id="loginEmailError">Please enter your email</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" class="form-control" required>
+                        <div class="error-message" id="loginPasswordError">Please enter your password</div>
+                    </div>
+                    <div class="form-group" style="display: flex; align-items: center;">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe" style="margin-left: 0.5rem; margin-bottom: 0;">Remember me</label>
+                    </div>
+                    <button type="submit" class="submit-btn">Login</button>
+                    <div class="form-message" id="loginMessage"></div>
+                    <div class="form-footer">
+                        Don't have an account? <a href="#" id="showSignup">Sign up</a>
+                    </div>
+                </form>
+                <div class="form-card fade-in delay-1">
+                    <div class="about-image" style="height: 100%;">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8cf5d871-fe90-474a-a61a-77a8d4ebd8af.png" alt="Futuristic digital authentication concept with glowing interface elements and floating security icons" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Signup Section -->
+        <section id="signup">
+            <h2 class="section-title fade-in">Create Account</h2>
+            <div class="form-container">
+                <form id="signupForm" class="form-card fade-in">
+                    <h3 class="form-title">Join Us Today</h3>
+                    <div class="form-group">
+                        <label for="signupName">Full Name</label>
+                        <input type="text" id="signupName" class="form-control" required>
+                        <div class="error-message" id="signupNameError">Please enter your name</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupEmail">Email</label>
+                        <input type="email" id="signupEmail" class="form-control" required>
+                        <div class="error-message" id="signupEmailError">Please enter a valid email</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" id="signupPassword" class="form-control" required>
+                        <div class="error-message" id="signupPasswordError">Password must be at least 8 characters</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" class="form-control" required>
+                        <div class="error-message" id="confirmPasswordError">Passwords do not match</div>
+                    </div>
+                    <button type="submit" class="submit-btn">Create Account</button>
+                    <div class="form-message" id="signupMessage"></div>
+                    <div class="form-footer">
+                        Already have an account? <a href="#" id="showLogin">Log in</a>
+                    </div>
+                </form>
+                <div class="form-card fade-in delay-1">
+                    <div class="about-image" style="height: 100%;">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/25d9b051-e24f-46bd-8c5e-811dbecd7089.png" alt="Abstract digital connection concept with network nodes and glowing lines representing user registration process" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="#" class="nav-link" data-target="home">Home</a>
+            <a href="#" class="nav-link" data-target="about">About</a>
+            <a href="#" class="nav-link" data-target="blog">Blog</a>
+            <a href="#" class="nav-link" data-target="contact">Contact</a>
+            <a href="#" class="nav-link" data-target="login">Login</a>
+        </div>
+        <div class="copyright">© 2025 Interactive WebApp. All rights reserved.</div>
+    </footer>
+
+    <script>
+        // DOM Elements
+        const navLinks = document.querySelectorAll('.nav-link');
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinksContainer = document.querySelector('.nav-links');
+        const themeToggle = document.getElementById('themeToggle');
+        const sections = document.querySelectorAll('section');
+        const showSignup = document.getElementById('showSignup');
+        const showLogin = document.getElementById('showLogin');
+        
+        // Navigation functions
+        function toggleMenu() {
+            navLinksContainer.classList.toggle('active');
+        }
+        
+        function navigateToSection(event) {
+            event.preventDefault();
+            const targetId = event.target.getAttribute('data-target');
+            
+            // Hide all sections
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Show target section
+            document.getElementById(targetId).style.display = 'block';
+            
+            // Close mobile menu if open
+            navLinksContainer.classList.remove('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        // Theme toggle function
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+            
+            // Save preference to localStorage
+            const isDark = document.body.classList.contains('dark-theme');
+            localStorage.setItem('darkTheme', isDark);
+            
+            // Update button text
+            themeToggle.textContent = isDark ? '☀️' : '🌓';
+        }
+        
+        // Form validation functions
+        function validateForm(form, fields) {
+            let isValid = true;
+            
+            fields.forEach(field => {
+                const input = document.getElementById(field.id);
+                const error = document.getElementById(field.id + 'Error');
+                
+                if (field.type === 'email') {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(input.value)) {
+                        error.style.display = 'block';
+                        isValid = false;
+                    } else {
+                        error.style.display = 'none';
+                    }
+                } else if (field.type === 'password') {
+                    if (field.id === 'signupPassword' && input.value.length < 8) {
+                        error.style.display = 'block';
+                        isValid = false;
+                    } else if (field.id === 'confirmPassword' && 
+                              input.value !== document.getElementById('signupPassword').value) {
+                        error.style.display = 'block';
+                        isValid = false;
+                    } else {
+                        error.style.display = 'none';
+                    }
+                } else {
+                    if (input.value.trim() === '') {
+                        error.style.display = 'block';
+                        isValid = false;
+                    } else {
+                        error.style.display = 'none';
+                    }
+                }
+            });
+            
+            return isValid;
+        }
+        
+        function showFormMessage(formId, message, isSuccess) {
+            const messageElement = document.getElementById(formId + 'Message');
+            messageElement.textContent = message;
+            messageElement.className = `form-message ${isSuccess ? 'success' : 'error'}`;
+            messageElement.style.display = 'block';
+            
+            setTimeout(() => {
+                messageElement.style.display = 'none';
+            }, 5000);
+        }
+        
+        // Event Listeners
+        navLinks.forEach(link => {
+            link.addEventListener('click', navigateToSection);
+        });
+        
+        menuToggle.addEventListener('click', toggleMenu);
+        themeToggle.addEventListener('click', toggleTheme);
+        
+        showSignup.addEventListener('click', (e) => {
+            e.preventDefault();
+            sections.forEach(section => section.style.display = 'none');
+            document.getElementById('signup').style.display = 'block';
+            navLinksContainer.classList.remove('active');
+            window.scrollTo(0, 0);
+        });
+        
+        showLogin.addEventListener('click', (e) => {
+            e.preventDefault();
+            sections.forEach(section => section.style.display = 'none');
+            document.getElementById('login').style.display = 'block';
+            navLinksContainer.classList.remove('active');
+            window.scrollTo(0, 0);
+        });
+        
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const fields = [
+                { id: 'name', type: 'text' },
+                { id: 'email', type: 'email' },
+                { id: 'message', type: 'text' }
+            ];
+            
+            if (validateForm('contactForm', fields)) {
+                // Simulate form submission
+                setTimeout(() => {
+                    showFormMessage('contact', 'Your message has been sent successfully!', true);
+                    e.target.reset();
+                }, 1000);
+            }
+        });
+        
+        // Login Form Submission
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const fields = [
+                { id: 'loginEmail', type: 'email' },
+                { id: 'loginPassword', type: 'password' }
+            ];
+            
+            if (validateForm('loginForm', fields)) {
+                // Simulate login and send thank you email
+                const userEmail = document.getElementById('loginEmail').value;
+                setTimeout(() => {
+                    showFormMessage('login', 'Login successful! Sending welcome email...', true);
+                    // Simulate email sending
+                    console.log(`Thank you email sent to ${userEmail}`);
+                    // Redirect to home after 2 seconds
+                    setTimeout(() => {
+                        sections.forEach(section => section.style.display = 'none');
+                        document.getElementById('home').style.display = 'block';
+                    }, 2000);
+                }, 1000);
+            }
+        });
+        
+        // Signup Form Submission
+        document.getElementById('signupForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const fields = [
+                { id: 'signupName', type: 'text' },
+                { id: 'signupEmail', type: 'email' },
+                { id: 'signupPassword', type: 'password' },
+                { id: 'confirmPassword', type: 'password' }
+            ];
+            
+            if (validateForm('signupForm', fields)) {
+                // Simulate signup and send welcome email
+                const userName = document.getElementById('signupName').value;
+                const userEmail = document.getElementById('signupEmail').value;
+                setTimeout(() => {
+                    showFormMessage('signup', 'Account created successfully! Sending welcome email...', true);
+                    // Simulate email sending
+                    console.log(`Welcome email sent to ${userEmail} (${userName})`);
+                    // Redirect to home after 2 seconds  
+                    setTimeout(() => {
+                        sections.forEach(section => section.style.display = 'none');
+                        document.getElementById('home').style.display = 'block';
+                    }, 2000);
+                }, 1000);
+            }
+        });
+        
+        // Initialize theme from localStorage
+        if (localStorage.getItem('darkTheme') === 'true') {
+            document.body.classList.add('dark-theme');
+            themeToggle.textContent = '☀️';
+        }
+        
+        // Show home section by default
+        document.getElementById('home').style.display = 'block';
+    </script>
+</body>
+</html>
